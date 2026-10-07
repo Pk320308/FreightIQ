@@ -1,0 +1,15 @@
+[
+  {
+    "id": "usr_admin_001",
+    "name": "Priyanshu Kumar",
+    "email": "admin@steel.gov.in",
+    "password": "Admin@123",
+    "role": "admin",
+    "department": "National Steel Logistics & Security Oversight",
+    "organization": "Ministry of Steel (Govt of India)",
+    "status": "active",
+    "createdAt": "2026-09-01",
+    "lastLogin": "Just now",
+    "createdBy": "Terminal CLI (createAdmin.js)"
+  }
+]

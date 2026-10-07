@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 36% 96%;
+    --foreground: 0 0% 0%; /* Pure Solid Black in Light Mode */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 211 82% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 90%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 210 40% 92%;
+    --muted-foreground: 215 25% 25%; /* High contrast dark secondary text */
+    --accent: 188 72% 36%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 75%;
+    --input: 214 32% 80%;
+    --ring: 211 82% 38%;
+    --chart-1: 211 82% 38%;
+    --chart-2: 159 65% 35%;
+    --chart-3: 34 88% 43%;
+    --chart-4: 0 70% 45%;
+    --chart-5: 188 72% 36%;
+    --radius: 0.75rem;
+
+    --success: 159 65% 35%;
+    --warning: 34 88% 43%;
+    --danger: 0 70% 45%;
+    --info: 211 82% 38%;
+    --app-background-image: url('/images/image copy.png');
+    --bg-img-opacity: 0.95; /* Sharp & fully visible background */
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 0 0% 100%; /* Pure Crisp White in Dark Mode */
+    --card: 222 40% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 222 44% 9%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 30% 16%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 222 30% 14%;
+    --muted-foreground: 215 20% 80%; /* Clean readable silver */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 30% 22%;
+    --input: 222 30% 20%;
+    --ring: 217 91% 60%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 142 71% 45%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 0 72% 51%;
+    --chart-5: 188 72% 55%;
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --danger: 0 72% 51%;
+    --info: 217 91% 60%;
+    --app-background-image: url('/images/image.png');
+    --bg-img-opacity: 0.95; /* Sharp & fully visible background */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground;
+    min-height: 100vh;
+    background-color: transparent;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+  }
+
+  /* Fixed Single Background Image (Never Repeats & Stays Fixed on Scroll) */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image: var(--app-background-image);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: var(--bg-img-opacity);
+    pointer-events: none;
+  }
+
+  /* No veil / parda overlay */
+  body::after {
+    display: none !important;
+  }
+
+  .bg-background {
+    background-color: transparent !important;
+  }
+}
+
+/* Translucent Frosted Glassmorphism for Cards, Sidebar, and Header */
+.glass {
+  background-color: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.75) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+.dark .glass {
+  background-color: rgba(13, 21, 44, 0.50) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.40) !important;
+}
+
+.glass:hover {
+  border-color: hsl(var(--primary) / 0.5) !important;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.6);
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+  background: hsl(222 47% 10%) !important;
+  font-family: inherit !important;
+}
+.leaflet-tile {
+  filter: brightness(0.7) invert(1) contrast(2.5) hue-rotate(200deg) saturate(0.35);
+}
+.leaflet-control-attribution {
+  background: hsl(222 40% 10% / 0.8) !important;
+  color: hsl(215 20% 50%) !important;
+  font-size: 9px !important;
+}
+.leaflet-popup-content-wrapper {
+  background: hsl(222 40% 12%) !important;
+  color: #ffffff !important;
+  border: 1px solid hsl(222 30% 20%) !important;
+  border-radius: 8px !important;
+}
+.leaflet-popup-tip {
+  background: hsl(222 40% 12%) !important;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Recharts tooltip styling */
+.recharts-default-tooltip {
+  background: hsl(222 44% 9% / 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid hsl(222 30% 25%) !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+}
+.recharts-tooltip-label {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+.recharts-tooltip-item {
+  color: #e2e8f0 !important;
+}
