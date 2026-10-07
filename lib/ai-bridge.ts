@@ -41,9 +41,8 @@ export interface AIPredictResponse {
 }
 
 /**
- * AI Bridge Service:
- * Acts as the official plug-and-play interface connecting FreightIQ frontend
- * to the Team's Python ML FastAPI/Flask backend.
+ * Machine Learning Bridge Service:
+ * Interface connecting FreightIQ to the Python ML Forecasting microservice.
  */
 export async function fetchAIFreightForecast(params: {
   originPort: string;

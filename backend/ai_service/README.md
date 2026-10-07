@@ -4,7 +4,7 @@ This directory contains the Python FastAPI backend service responsible for train
 
 ---
 
-## ⚡ Quick Start for AI Teammates
+## ⚡ Service Setup & Execution
 
 ### 1. Create Virtual Environment & Install Dependencies:
 ```bash

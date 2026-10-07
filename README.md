@@ -96,7 +96,7 @@ Open **`http://localhost:3000`** in your browser.
 
 ---
 
-### Step 2: Start the Python AI/ML Service (For AI Teammates)
+### Step 2: Start the Python AI/ML Service (Optional)
 ```bash
 cd backend/ai_service
 
@@ -128,7 +128,7 @@ python3 main.py
 
 ---
 
-## 👥 6. Hackathon Deliverable Alignment (SIH26006)
+## 🎯 6. Key Deliverables & Feature Highlights (SIH26006)
 
 * ✅ **Predictive Freight Analytics:** Multi-variable forward freight curves with confidence intervals.
 * ✅ **Vessel & Port Optimization:** Real draft, UKC, and cargo compatibility matching.
