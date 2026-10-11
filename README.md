@@ -136,3 +136,4 @@ python3 main.py
 * ✅ **What-If Risk Simulation:** Real-time bunker fuel shock and demurrage estimation.
 * ✅ **Executive Reporting:** Instant exportable CSV and Print/PDF decision briefs.
  
+ 
