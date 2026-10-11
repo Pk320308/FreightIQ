@@ -135,3 +135,4 @@ python3 main.py
 * ✅ **Procurement Strategy Advisor:** Spot vs. Time Charter financial break-even analysis.
 * ✅ **What-If Risk Simulation:** Real-time bunker fuel shock and demurrage estimation.
 * ✅ **Executive Reporting:** Instant exportable CSV and Print/PDF decision briefs.
+ 
